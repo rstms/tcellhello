@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"math/rand"
 	"os"
 	"os/signal"
 	"time"
-	"math/rand"
-	"log"
 
 	"github.com/gdamore/tcell"
 	"github.com/urfave/cli"
@@ -97,7 +97,7 @@ func main() {
 				//log.Printf("tcell Event\n")
 				switch ev := event.(type) {
 				case *tcell.EventKey:
-					switch  ev.Key() {
+					switch ev.Key() {
 					case tcell.KeyCtrlZ, tcell.KeyCtrlC:
 						done = true
 						continue
@@ -128,9 +128,8 @@ func main() {
 		ticker.Stop()
 		fmt.Println("Elapsed", time.Since(start))
 
-		return nil 
+		return nil
 	}
-
 
 	err := app.Run(os.Args)
 	if err != nil {
