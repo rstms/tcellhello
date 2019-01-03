@@ -39,6 +39,11 @@ func main() {
 		cli.BoolFlag{
 			Name: "debug",
 		},
+		cli.StringFlag{
+			Name: "glyph",
+			Value: ".",
+			Usage: "Character to display",
+		},
 	}
 
 	start := time.Now()
@@ -63,7 +68,7 @@ func main() {
 		ticker := time.NewTicker(1)
 		defer ticker.Stop()
 
-		width, height := 10, 16
+		width, height := 1, 1
 		lx := 0
 		ly := 0
 		go func() {
@@ -76,7 +81,7 @@ func main() {
 				st := tcell.StyleDefault.Foreground(tcell.Color(rand.Int() % s.Colors()))
 				//st := tcell.StyleDefault
 
-				gl := 'X'
+				gl := rune(c.String("glyph")[0])
 				if (rand.Int() & 1) != 0 {
 					gl = ' '
 				}
