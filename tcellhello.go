@@ -33,7 +33,7 @@ func main() {
 
 	app.Name = "tcellhello"
 	app.Usage = "Hello World for tcell"
-	app.Version = "0.0.0"
+	app.Version = "0.1.0"
 
 	app.Flags = []cli.Flag{
 		cli.BoolFlag{
