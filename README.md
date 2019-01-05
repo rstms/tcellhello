@@ -1,5 +1,13 @@
 # tcellhello - a sparkly go tcell sparkly demo
 
+Displays a character in random colors and locations on the console.
+
+Key  | Function 
+---- | ------------
+ 'q' | quit
+ 'c' | clear screen
+
+
 To load libraries:
 
 ```
