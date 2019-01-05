@@ -40,7 +40,7 @@ func main() {
 			Name: "debug",
 		},
 		cli.StringFlag{
-			Name: "glyph",
+			Name:  "glyph",
 			Value: ".",
 			Usage: "Character to display",
 		},
@@ -95,8 +95,7 @@ func main() {
 			}
 		}()
 
-		done := false
-		for !done {
+		for done := false; !done; {
 			select {
 			case event := <-eventChan:
 				//log.Printf("tcell Event\n")
@@ -136,8 +135,7 @@ func main() {
 		return nil
 	}
 
-	err := app.Run(os.Args)
-	if err != nil {
+	if err := app.Run(os.Args); err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
 	}

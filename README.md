@@ -1,4 +1,4 @@
-# tcellhello - a sparkly go tcell sparkly demo
+# tcellhello - a go tcell demo
 
 Full-screen animated display with realtime interactive keyboard control.  Displays a character in random colors and locations on the console.
 
